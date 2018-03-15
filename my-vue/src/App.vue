@@ -3,6 +3,8 @@
     <div class="url-list">
          <router-link to="/todo">Go to Todo</router-link>
          <router-link to="/china">Go to China</router-link>
+         <router-link to="/swiper">Go to Swiper</router-link>
+         <router-link to="/home">Go to Home</router-link>
     </div>
    
     <div style="float:left;width:80%">

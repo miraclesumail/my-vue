@@ -12,10 +12,20 @@
   "dependencies": {
     "ajv-keywords": "^3.1.0",
     "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.2",
     "vue": "^2.5.2",
     "vue-radial-progress": "^0.2.10",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vuex-i18n": "^1.10.5",
+    "vux": "^2.8.0",
+    "vux-loader": "^1.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

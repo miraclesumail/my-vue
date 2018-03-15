@@ -1,10 +1,10 @@
-export const STORAGE_KEY = 'todos-vue'
+//export const STORAGE_KEY = 'todos-vue'
 
 if (navigator.userAgent.indexOf('PhantomJS') > -1) {
     window.localStorage.clear()
   }
 
-export const state = {
+const state = {
     todos: JSON.parse(window.localStorage.getItem('STORAGE_KEY') )|| [
         {message:'java', done:true},
         {message:'swift', done:false},
@@ -12,8 +12,11 @@ export const state = {
     ]
 }  
 
+const getters = {
+    getTodo:state => state.todos
+}
 
-export const mutations = {
+const mutations = {
     addTodo (state, { message,name }) {
         console.log(name);
         state.todos = [...state.todos, {
@@ -47,4 +50,10 @@ export const mutations = {
       clearCompleted (state) {
         state.todos = state.todos.filter(todo => !todo.done)
       }
+}
+
+export default {
+    state,
+    getters,
+    mutations
 }

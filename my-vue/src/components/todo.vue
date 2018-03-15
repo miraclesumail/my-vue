@@ -7,7 +7,7 @@
             placeholder="What needs to be done?"
             @keyup.enter="addTodo">
        </header>
-
+    
        <ul>
             <li v-for="(todo,index) in filteredTodos" :key="index">
                <input type="checkbox" :checked="todo.done" @change="toggleTodo({ todo: todo })">
@@ -30,7 +30,7 @@
 <script>
 import { mapMutations } from 'vuex'
 import axios from 'axios'
- 
+import { mapGetters, mapActions } from 'vuex'
 
 const filters = {
     all: todos => todos,
@@ -48,9 +48,12 @@ export default {
   },
 
    computed: {
-       todos() {
-          return this.$store.state.todos
-       },
+        ...mapGetters({
+            todos: 'getTodo',
+        }),
+      //  todos() {
+      //     return this.$store.state.todos
+      //  },
        filteredTodos (){
           return filters[this.visibility](this.todos)
       },
